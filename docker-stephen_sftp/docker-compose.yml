@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  sftp:
+    image: atmoz/sftp
+    container_name: local_sftp_server
+    ports:
+      - "2222:22"
+    volumes:
+      - ./data:/home/sftpuser/upload
+    environment:
+      - SFTP_USERS=sftpuser:password:1001
+    restart: unless-stopped
+version: '3.8'
+
+services:
+  sftp:
+    image: atmoz/sftp
+    container_name: local_sftp_server
+    ports:
+      - "2222:22"
+    volumes:
+      - ./data:/home/${SFTP_USER}/upload
+    environment:
+      - SFTP_USERS=${SFTP_USER}:${SFTP_PASSWORD}:1001
+    restart: unless-stopped
