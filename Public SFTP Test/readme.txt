@@ -8,4 +8,4 @@ for .NET, please visit our website at https://www.rebex.net/
 
 For feedback and support, contact support@rebex.net
 
-Thanks!
+Thanks!!
